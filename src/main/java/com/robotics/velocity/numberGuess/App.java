@@ -21,11 +21,9 @@ public class App
     	
     	p("Max Number: ");
     	highestValue = pInt(in.readLine());
-    	
     	p("Min Number: ");
     	lowestValue = pInt(in.readLine());
     	
-    	    	
     	Random r = new Random();
     	answer = (r.nextInt()%((highestValue - lowestValue) + 1)) + lowestValue;
 
