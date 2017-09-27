@@ -13,20 +13,24 @@ public class App
     {
     	
     	int totalGuess = 5;
-    	int highestValue = -1;
+    	int highestValue = 100;
     	int answer = -1;
+    	int lowestValue = 0;
     	
-    	
-    	p("Max Number: ");
     	BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
     	
-    	String userInput = in.readLine();
-    	highestValue = pInt(userInput);
+    	p("Max Number: ");
+    	highestValue = pInt(in.readLine());
     	
+    	p("Min Number: ");
+    	lowestValue = pInt(in.readLine());
+    	
+    	    	
     	Random r = new Random();
-    	answer = r.nextInt()%(highestValue + 1);
+    	answer = (r.nextInt()%((highestValue - lowestValue) + 1)) + lowestValue;
+
     	answer = Math.abs(answer);
-    	//pln(answer);
+    	pln(answer);
 
     	int guess = -1;
     	while(guess != answer){
