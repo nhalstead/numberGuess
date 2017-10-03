@@ -4,8 +4,8 @@ import java.io.InputStreamReader;
 import java.util.Random;
 
 /**
- * Hello world!
- *
+ * Number Guessing Game
+ * @author Noah Halstead
  */
 public class App 
 {
@@ -32,7 +32,7 @@ public class App
     	pln(answer);
 
     	int guess = -1;
-    	while(guess != answer){
+    	do {
     		p("Please Enter a number: ");
     		guess = pInt(in.readLine());
     		
@@ -46,8 +46,8 @@ public class App
     			plne(arrayNext(outputC));
     		}
     	}
+    	while(guess != answer);
     }
-    
     
     
     public static void pln(String i){
@@ -56,7 +56,7 @@ public class App
     public static void pln(int i){
     	System.out.println(i);
     }
-    
+
     public static void plne(String i){
     	System.out.println(i+"\n");
     }
@@ -71,6 +71,11 @@ public class App
     	System.out.print(i);
     }
     
+    /*
+     * Phrase the String as an Int
+     * @param A String that it will process
+     * @return The Int
+     */
     public static int pInt(String i){
     	try {
     		return Integer.parseInt(i);
