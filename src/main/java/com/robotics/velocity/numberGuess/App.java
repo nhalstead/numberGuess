@@ -16,6 +16,7 @@ public class App
     	int highestValue = 100;
     	int answer = -1;
     	int lowestValue = 0;
+    	String[] outputC = new String[] { "You WON!", "YOU GOT IT!", "WAY TO GO! YOU WIN!", "WINNER!!!!!", "You Have got It!"};
     	
     	BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
     	
@@ -34,9 +35,17 @@ public class App
     	while(guess != answer){
     		p("Please Enter a number: ");
     		guess = pInt(in.readLine());
+    		
+    		if(guess > answer){
+    			pln("High");
+    		}
+    		else if(guess < answer){
+    			pln("Low");
+    		}
+    		else {
+    			plne(arrayNext(outputC));
+    		}
     	}
-    	
-    	plne("You Have got It!");
     }
     
     
@@ -69,6 +78,16 @@ public class App
     	catch (Exception e){
     		return 0;
     	}
+    }
+    
+    // https://stackoverflow.com/a/8065554
+    public static int arrayNext(int[] array) {
+        int rnd = new Random().nextInt(array.length);
+        return array[rnd];
+    }
+    public static String arrayNext(String[] array) {
+        int rnd = new Random().nextInt(array.length);
+        return array[rnd];
     }
     
 }
